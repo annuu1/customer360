@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<header class="header1">
+    <div class="left_area">
+        <h3>Customer <span>360</span></h3>
+    </div>
+
+    <div>
+        <a href="/workspace" class="logout_btn">Go to workspace</a>
+    </div>
+
+    <div class="right_area">
+        <a href="/logout" class="logout_btn">Logout</a>
+    </div>
+</header>
+
+<div class="sidebar">
+    <img th:src="@{/css/11.jpg}" class="profile_image center" alt="profile_pic" />
+    <a href="/dashboard"><i class="fa-solid fa-desktop"></i><span>Dashboard</span></a>
+    <a href="/admin/components"><i class="fa-solid fa-cogs"></i><span>Admin</span></a>
+    <div class="dropdown">
+        <a href="#">
+            <i class="fa-solid fa-table"></i>
+            <span>Tables</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="/allCustomers">View Customers</a>
+            <a href="/allComplaints">View Complaints</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="#">
+            <i class="fa-solid fa-th"></i>
+            <span>Forms</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="addCustomerForm">Add Customer</a>
+            <a href="addComplaintForm">Add Complaint</a>
+        </div>
+    </div>
+    <!-- <a href="#"><i class="fa-solid fa-info-circle"></i><span>About</span></a>
+    <a href="#"><i class="fa-solid fa-sliders-h"></i><span>Settings</span></a> -->
+</div>
+</html>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+	<link th:replace="~{fragments/all_js_css :: head}">
+
+</head>
+<body>
+<div th:replace="~{fragments/sidebar}"></div>
+<div class="content">
+
+    <h1>List of All Complaints: </h1>
+        <a href="/addComplaintForm"><button>Add Complaint</button></a>
+		<a href="/getComplaintById?cId=0"><button>Track Complaint</button></a>
+    <table>
+       <tr>
+	       	<th>Ticket ID</th>
+			<th>Customer ID</th>
+	       	<th>Name</th>
+	       	<th>Mobile No.</th>
+	       	<th>Complaint</th>
+	       	<th>Status</th>
+	       	<th>Assigned To</th>
+			<th>Action</th>
+       </tr>
+       
+       <tr th:each="complaint : ${complaints}">
+
+		<td th:text="${complaint.cid}"></td>
+		<td th:if="${complaint.customer != null}" th:text="${complaint.customer.cid}"></td>
+		<td th:unless="${complaint.customer != null}">N/A</td>
+		<td th:text="${complaint.name}"></td>
+		<td th:text="${complaint.moNo}"></td>
+		<td th:text="${complaint.complaint}"></td>
+		<td th:text="${complaint.status}"></td>
+		<td th:text="${complaint.assign}"></td>
+		
+		
+        <td>
+            <div class="dropdown">
+                <Button>Action</Button>
+                    <div class="dropdown-content">
+                        <a th:href="@{/deleteComplaint(cid=${complaint.cid})}" class="delete-button">Delete</a>
+                        <a th:href="@{fetchUpdateComplaint(cId=${complaint.cid})}" class="update-button">Update</a>
+                    </div>
+            </div>
+        </td>
+
+	   </tr>
+
+       
+	</table>
+	
+	</div>
+</body>
+</html>

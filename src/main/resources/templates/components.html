@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Agent</title>
+    <link th:replace="~{fragments/all_js_css}"></link>
+</head>
+<body>
+    <div th:replace="~{fragments/sidebar}"></div>
+    <div class="content">
+        <a href="/admin/addUserForm"><button>Add User</button></a>
+
+    <table>
+        <tr>
+            <th>Agent ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No.</th>
+            <th>Role</th>
+            <th>username</th>
+            <th>Action</th>
+        </tr>
+        
+        <tr th:each="agent : ${agents}">
+ 
+         <td th:text="${agent.id}"></td>
+         <td th:text="${agent.name}"></td>
+         <td th:text="${agent.email}"></td>
+         <td th:text="${agent.phone}"></td>
+         <td th:text="${agent.role}"></td>
+         <td th:text="${agent.user.username}"></td>
+         
+         
+         <td>
+             <div class="dropdown">
+                 <Button>Action</Button>
+                     <div class="dropdown-content">
+                         <a th:href="@{/admin/deleteUser(id=${agent.id})}" class="delete-button">Delete</a>
+                         <a th:href="@{/admin/updateUser(id=${agent.id})}" class="update-button">Update</a>
+                     </div>
+             </div>
+         </td>
+ 
+        </tr>
+ 
+        
+     </table>     
+</div>
+
+</body>
+</html>

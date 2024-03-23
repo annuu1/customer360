@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Previous Year Data</title>
+	<link th:replace="~{fragments/all_js_css :: head}">
+
+</head>
+<body>
+<div th:replace="~{fragments/sidebar}"></div>
+    <div class="content">
+        <h1 class="fheader">Previous data <button> Add Order </button></h1>
+
+    
+        <table>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Order Id</th>
+                <th>PAN</th>
+                <th>Customer ID</th>
+                <th>Service ID</th>
+                <th>Order Date</th>
+                <th>Assessment Year</th>
+                <th>Related Agent</th>
+                <th>Additional Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Renewed</td>
+                <td>John Doe</td>
+                <td>ABCDE1234F</td>
+                <td>CUST001</td>
+                <td>SVC001</td>
+                <td>2024-02-25</td>
+                <td>2023-2024</td>
+                <td>Agent XYZ</td>
+                <td>Some additional note</td>
+              </tr>
+              <tr>
+                <td>Pending</td>
+                <td>John Doe</td>
+                <td>ABCDE1234F</td>
+                <td>CUST001</td>
+                <td>SVC001</td>
+                <td>2024-02-25</td>
+                <td>2023-2024</td>
+                <td>Agent XYZ</td>
+                <td>Some additional note</td>
+              </tr>
+            </tbody>
+          </table>
+        
+
+</div>
+</body>
+</html>

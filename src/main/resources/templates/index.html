@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/home.css}" type="text/css">
+        <title>CRM Home Page</title>
+    </head>
+    <body>
+   
+    <div th:replace="~{fragments/navbar.html}"></div>
+
+    <section class="main-content">
+            <h2>Our CRM Services</h2>
+            <p><b>At Customer 360</b>, we offer a comprehensive suite of services designed to streamline your
+            business operations. From efficient customer data management to personalized marketing
+            <p>solutions, our services are tailored to enhance your customer relationships and drive growth.</p>
+    
+        </section>
+    
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    
+        <footer>
+            <p>&copy; 2023 CRM Solutions</p>
+        </footer>
+    </body>
+    </html>
+    

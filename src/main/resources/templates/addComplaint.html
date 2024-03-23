@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Customer</title>
+    
+	<link th:replace="~{fragments/all_js_css :: head}">
+
+</head>
+<body>
+<div th:replace="~{fragments/sidebar}"></div>
+<div class="content">
+    <div class="container">
+        <h1>Add complaint</h1>
+        
+        <form action="/addComplaint">
+            <div class="form-group">
+                <label for="customerName">Customer Name:</label>
+                <input type="text" class="form-control" id="customerName" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="customerID">Customer Id:</label>
+                <input type="text" class="form-control" id="cId" name="cId" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="customerName">Enter Mobile Number:</label>
+                <input type="text" class="form-control" id="moNo" name="moNo" required>
+            </div>
+
+			<div class="form-group">
+                <label for="category">Category/Type:</label>
+                <input type="text" class="form-control" id="category" name="category" required>
+            </div>
+            <div class="form-group">
+                <label for="customerName">Enter Subject:</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+            </div>
+				<div class="form-group">
+                <label for="complaint">Description:</label>
+                <textarea  id="complaint" cols="30" rows="10" name="complaint"></textarea>
+            </div>
+            
+            
+            <button type="submit">Submit Complaint</button><br>
+        </form>
+
+        <br>
+        
+    </div>
+
+</div>
+</body>
+</html>

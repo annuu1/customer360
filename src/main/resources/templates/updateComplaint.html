@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Complaint</title>
+    <link th:replace="~{fragments/all_js_css :: head}"></link>
+</head>
+<body>
+    <div th:replace="~{fragments/sidebar}"></div>
+    <div class="content">
+        <h1 class="fheader">Update Complaint</h1>
+        <form th:action="@{/updateComplaint}" method="post">
+            <div class="container">
+                <div class="form-group">
+                    <label for="id">Id:</label>
+                    <input type="text" th:value="${complaint.cid}" id="cId" name="cId" hidden="hidden"></input>
+                    <input type="text" th:value="${complaint.cid}" id="cId" name="cId" disabled="disabled"></input>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" th:value="${complaint.name}" id="name" name="name" required="required"></input>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" th:value="${complaint.moNo}" id="moNo" name="mobile" required="required"></input>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" th:value="${complaint.subject}" id="subject" name="subject" required="required"></input>
+                </div>
+                <div class="form-group">
+                    <label for="complaint">Complaint:</label>
+                    <textarea id="complaint" name="complaint" required="required" th:text="${complaint.complaint}"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select name="status">
+                        <option value="Progress">Progress</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Priority:</label>
+                    <select name="priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="assign">Assign:</label>
+                    <input type="text" th:value="${complaint.assign}" id="assign" name="assign" required="required"></input>
+                </div>
+                <div class="form-group">
+                    <label for="resolution">Resolution:</label>
+                    <input type="text" th:value="${complaint.resolution}" id="resolution" name="resolution" required></input>
+                </div>
+                <div class="form-group">
+                    <label for="closureDate">Expected Closure:</label>
+                    <input type="date" th:value="${complaint.closureDate}" id="closureDate" name="closureDate" required></input>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

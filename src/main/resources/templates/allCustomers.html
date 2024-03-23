@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Customers</title>
+	<link th:replace="~{fragments/all_js_css :: head}">
+
+</head>
+<body>
+<div th:replace="~{fragments/sidebar}"></div>
+<div class="content">
+
+    
+    <h1>List of All Customers: </h1>
+    <a href="addCustomerForm"><button  class="go_to_right"> Add Customer </button> </a>
+    
+    <table>
+        <tr>
+            <th>Customer ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Actions</th>
+        </tr>
+       
+    <tr th:each="customer : ${customers}">
+
+        <td th:text="${customer.cid}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.email}"></td>
+        <td th:text="${customer.mono}"></td>
+
+        <td>
+            <div class="dropdown">
+                <Button>Action</Button>
+                    <div class="dropdown-content">
+                        <a th:href="@{/deleteCustomer(cid=${customer.cid})}" class="delete-button">Delete</a>
+                        <a th:href="@{/updateCustomer(cid=${customer.cid})}" class="update-button">Update</a>
+                    </div>
+            </div>
+        </td>
+    </tr>
+
+</table>
+    
+	
+</div>
+</body>
+</html>

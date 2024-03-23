@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Tracker</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet"></link>
+    <style>
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div th:replace="fragments/navbar"></div>
+    <div class="content center">
+        <h1 class="fheader">Complaint Tracker</h1>
+        <form method="post" th:action="@{/getComplaintById}">
+            <div class="form-group">
+                <label for="complaintId">Enter Complaint ID:</label>
+                <input type="text" class="form-control" id="cId" name="cId" required="required"></input>
+            </div>
+            <button type="submit">Track</button>
+        </form>
+        <div class="">
+            <div class="container">
+                <h3>Complaint Details</h3>
+                <p>ComplaintID: <span th:text="${complaint.cid}"></span></p>
+                <p>Customer Name: <span th:text="${complaint.name}"></span></p>
+                <p>Phone: <span th:text="${complaint.moNo}"></span></p>
+                <p>Status: <span th:text="${complaint.status}"></span></p>
+                <p>Subject: <span th:text="${complaint.subject}"></span></p>
+                <p>Complaint: <span th:text="${complaint.complaint}"></span></p>
+                <p>Status: <span th:text="${complaint.status}"></span></p>
+                <p>Assigned To: <span th:text="${complaint.assign}"></span></p>
+                <p>Complaint Raise Date: <span th:text="${complaint.date}"></span></p>
+                <p>Closure Date: <span th:text="${complaint.closureDate}"></span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

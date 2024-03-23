@@ -1,0 +1,16 @@
+<header>
+    <h1>Welcome to<span class="crm-title"><span class="green">Customer</span><span class="blue"> 360</span></span></h1>
+    <div class="login-button">
+        <a th:href="@{/dashboard}">Login</a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/public/home">Home</a></li>
+            <li><a href="/public/aboutUs">About Us</a></li>
+            <li><a href="/public/services">Services</a></li>
+            <li><a href="/public/contact">Contact</a></li>
+            <li><a href="/public/raiseComplaint">Raise Complaint</a></li>
+            <li><a th:href="@{/getComplaintById(cId=0)}">Track Complaint</a></li>
+        </ul>
+    </nav>
+</header>

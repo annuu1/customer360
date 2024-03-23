@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <Title></Title>
+
+    <link th:replace="~{fragments/all_js_css :: head}">
+    <link th:href="@{css/agent_dashboard.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div th:replace="~{fragments/sidebar}"></div>
+
+
+    
+    <div class="content">
+       
+        <div class="main">
+
+            <div class="box-container">
+ 
+                <div class="box box1">
+                    <div class="text">
+                        <h2 class="topic-heading">
+                            <p th:text="${totalCustomers}"></p>
+                        </h2>
+                        <h2 class="topic">All Customers</h2>
+                    </div>
+ 
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png" alt="Views">
+                </div>
+ 
+                <div class="box box2">
+                    <div class="text">
+                        <h2 class="topic-heading">
+                            <p th:text="${totalComplaints}"></p>
+                        </h2>
+                        <h2 class="topic">All Complaints</h2>
+                    </div>
+ 
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="likes">
+                </div>
+ 
+                <div class="box box3">
+                    <div class="text">
+                        <h2 class="topic-heading">
+                            <p th:text="${totalAgents}"></p>
+                        </h2>
+                        <h2 class="topic">Agents</h2>
+                    </div>
+ 
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png" alt="comments">
+                </div>
+ 
+                <div class="box box4">
+                    <div class="text">
+                        <h2 class="topic-heading">
+                            <p th:text="${allResolvedComplaints}"></p>
+                        </h2>
+                        <h2 class="topic">Resolved Complaints</h2>
+                    </div>
+ 
+                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
+                </div>
+            </div>
+ 
+            <div class="report-container">
+                <div class="report-header">
+                    <h1 class="recent-Articles">Recent Complaints</h1>
+                    <a href="/allComplaints"><button class="view">View All</button></a>
+                </div>
+ 
+                <div class="report-body">
+                    <div class="report-topic-heading">
+                        <h3 class="t-op">Ticket ID</h3>
+                        <h3 class="t-op">Name</h3>
+                        <h3 class="t-op">Date</h3>
+                        <h3 class="t-op">Status</h3>
+                    </div>
+ 
+                    <div class="items">
+                        <div th:each="complaint : ${recentComplaints}" class="item1">
+                            <h3 class="t-op-nextlvl" th:text="${complaint.cid}"></h3>
+                            <h3 class="t-op-nextlvl" th:text="${complaint.name}"></h3>
+                            <h3 class="t-op-nextlvl" th:text="${complaint.date}"></h3>
+                            <h3 class="t-op-nextlvl label-tag" th:text="${complaint.status}"></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

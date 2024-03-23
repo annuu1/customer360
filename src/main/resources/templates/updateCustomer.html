@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Customer</title>
+	<link th:replace="~{fragments/all_js_css :: head}">
+
+</head>
+<body>
+<div th:replace="~{fragments/sidebar}"></div>
+    <div class="content">
+        <h1 class="fheader">Update Customer</h1>
+
+    <div class="container">
+        <form action="/updateCustomer1" method = "get">
+            <div class="form-group">
+                <label for="name">Customer Id:</label>
+                <input th:value="${customer.cid}" type="text" id="cid" name="cid" required disabled>
+                <input th:value="${customer.cid}" type="text" id="cid" name="cid" required hidden>
+
+                <label for="name">Name:</label>
+                <input th:value="${customer.name}" type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input th:value="${customer.mono}" type="text" id="moNo" name="moNo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input th:value="${customer.email}" type="text" id="email" name="email" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
