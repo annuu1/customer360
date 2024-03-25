@@ -55,6 +55,9 @@ public class DashboardController {
 		m.addAttribute("allResolvedComplaints",totalResolvedComplaints);
 		m.addAttribute("recentComplaints",recentComplaints);
 		m.addAttribute("totalAgents", totalAgents);
+
+		m.addAttribute("totalOrders", totalAgents);
+		m.addAttribute("totalAgents", totalAgents);
 		
 
 		return "dashboard";

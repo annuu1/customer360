@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Sample Form</title>
-    <link th:replace="fragments/all_js_css"></link>
+    <link th:replace="~{fragments/all_js_css :: head}"></link>
 </head>
 <body>
-    <div th:replace="fragments/sidebar"></div>
+    <div th:replace="~{fragments/sidebar}"></div>
 <div class="content">
     <h3>About Us</h3>
     <p>Welcome to Customer360, where we strive to revolutionize customer relationship management. Our platform is designed to empower businesses by providing an intuitive and efficient solution to manage customer interactions, streamline processes, and drive growth.</p>

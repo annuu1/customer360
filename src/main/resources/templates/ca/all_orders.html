@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Customer</title>
+	<link th:replace="~{fragments/all_js_css :: head}">
+
+</head>
+<body>
+<div th:replace="~{fragments/sidebar}"></div>
+    <div class="content">
+        <h1 class="fheader">Order Details <button> Add Order </button></h1>
+
+        <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>PAN</th>
+                <th>Status</th>
+                <th>Customer ID</th>
+                <th>Service ID</th>
+                <th>Order Date</th>
+                <th>Assessment Year</th>
+                <th>Related Agent</th>
+                <th>Additional Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Add your data rows here -->
+              <tr th:each="order : ${all_Orders}">
+                <td th:text="${order.id}">Order ID</td>
+                <td th:text="${order.customer_name}">Customer Name</td>
+                <td th:text="${order.pan}">PAN</td>
+                <td th:text="${order.status}">PAN</td>
+                <td th:text="${order.customer_id}">PAN</td>
+                <td th:text="${order.service_id}">PAN</td>
+                <td th:text="${order.order_date}">PAN</td>
+                <td th:text="${order.assessment_year}">PAN</td>
+                <td th:text="${order.additional_note}">PAN</td>
+                <!-- Add more columns as needed -->
+            </tr>
+              
+            </tbody>
+          </table>
+        
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Orders</title>
+</head>
+<body>
+    <h1>All Orders</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>PAN</th>
+                 Add more columns as needed -->
+            <!-- </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${all_Orders}">
+                <td th:text="${order.id}">Order ID</td>
+                <td th:text="${order.customer_name}">Customer Name</td>
+                <td th:text="${order.pan}">PAN</td> -->
+                <!-- Add more columns as needed -->
+            <!-- </tr>
+        </tbody>
+    </table>
+</body> -->
+<!-- </html> --> 

@@ -13,7 +13,7 @@ public class NavigationController {
     public String workspace(){
         return "ca/workSpace";
     }
-@RequestMapping("/allOders")
+@RequestMapping("/allOrdersList")
 public String allOrdere(){
     return "ca/ordersList";
 }
@@ -44,9 +44,6 @@ public String team(){
     public String addAgentsForm(){
         return "/admin/addAgent";
     }
-
-
-
 
     //Admin navigation form here
 

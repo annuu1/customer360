@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Order Saved</title>
+</head>
+<body>
+    <h1>Order Saved Successfully!</h1>
+    <p th:text="${message}"></p> <!-- Display the flash attribute message -->
+    <!-- You can add more content or styling as needed -->
+</body>
+</html>
+
+<!-- http://localhost:8080/saveOrder?customer_name=John%20Doe&pan=ABCDE1234F&status=Pending&customer_id=CUST123&service_id=SERV456&order_date=2023-01-05&assessment_year=2023-2024&additional_note=Urgent%20order&continue -->
