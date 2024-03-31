@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Service</title>
+    <link th:replace="~{fragments/all_js_css :: head}">
+</head>
+<body>
+    <div th:replace="~{fragments/sidebar}"></div>
+    <div class="content">
+        <h1 class="fheader">Add Service</h1>
+        <div class="container">
+            <form action="/saveService" method="post">
+                <div class="form-group">
+                    <label for="service_name">Service Name:</label>
+                    <input type="text" id="service_name" name="serviceName" required>
+                </div>
+                <div class="form-group">
+                    <label for="service_id">Service ID:</label>
+                    <input type="text" id="service_id" name="serviceId" required>
+                </div>
+                <div class="form-group">
+                    <label for="service_description">Service Description:</label>
+                    <textarea id="service_description" name="serviceDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="service_price">Service Price:</label>
+                    <input type="number" id="service_price" name="servicePrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="service_related_orders">Service Related Orders:</label>
+                    <input type="text" id="service_related_orders" name="serviceRelatedOrders">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,8 +8,8 @@
 <body>
 <div th:replace="~{fragments/sidebar}"></div>
     <div class="content">
-        <h1 class="fheader">Order Details <button> Add Order </button></h1>
-
+        <h1 class="fheader">Order Details <a href="addOrder"> <button> Add Order </button> </a> </h1>
+        <P th:text = "${message}"></P>
         <table>
             <thead>
               <tr>
