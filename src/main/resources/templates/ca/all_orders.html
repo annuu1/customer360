@@ -37,6 +37,16 @@
                 <td th:text="${order.order_date}">PAN</td>
                 <td th:text="${order.assessment_year}">PAN</td>
                 <td th:text="${order.additional_note}">PAN</td>
+                <td>
+                    <div class="dropdown">
+                        <Button>Action</Button>
+                        <div class="dropdown-content">
+                            <a th:href="@{/delete_order(id=${order.id})}" class="delete-button">Delete</a>
+                            <!-- Update button with service values -->
+                            <a th:href="@{update_order(id=${order.id})}" class="update-button">Update</a>
+                        </div>
+                    </div>
+                </td>
                 <!-- Add more columns as needed -->
             </tr>
               

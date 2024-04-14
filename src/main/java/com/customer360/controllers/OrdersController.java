@@ -88,5 +88,10 @@ private String get_current_assessment_year() {
     return assessment_year;
 }
 
+@RequestMapping("delete_order")
+public String delete_order(@RequestParam Long id, Model m){
+    order_repo.deleteById(id);
+    return allOrders(m);
+}
 
 }
