@@ -34,6 +34,21 @@ public class ServiceController {
         );
         return all_services(m);
     }
+    @RequestMapping("update_services")
+    public String update_services(@RequestParam Long id,
+                                @RequestParam String name,
+                                @RequestParam String description,
+                                @RequestParam String price,
+                                Model m
+                                                        ) {
+
+        Service service = new Service(id, name, description, price);
+        service_repo.save(service);
+        System.out.println(
+            service_repo.findAll()
+        );
+        return all_services(m);
+    }
     @RequestMapping("all_services")
     public String all_services(Model model){
         List<Service> all_services = service_repo.findAll();
