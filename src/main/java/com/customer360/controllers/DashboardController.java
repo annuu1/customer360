@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.customer360.models.Agents;
 import com.customer360.models.Complaint;
+import com.customer360.models.Order;
+import com.customer360.models.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.customer360.repository.AgentsRepository;
 import com.customer360.repository.ComplaintRepository;
 import com.customer360.repository.CustomerRepository;
+import com.customer360.repository.OrderRepository;
+import com.customer360.repository.ServiceRepository;
 
 @Controller
 public class DashboardController {
@@ -22,6 +26,12 @@ public class DashboardController {
 	private ComplaintRepository coRepo;
 	@Autowired
 	private AgentsRepository agRepo;
+
+	@Autowired
+	private OrderRepository orderRepository;
+
+	@Autowired
+	private ServiceRepository serviceRepository;
 	
 	@RequestMapping("/dashboard")
 	public String dashboard(Model m) {
@@ -30,6 +40,11 @@ public class DashboardController {
 		//Get agents
 		List<Agents> agents= agRepo.findAll();
 		int totalAgents = agents.size();
+
+		List<Order> orders= orderRepository.findAll();
+		int totalOrders = orders.size();
+		List<Service> services= serviceRepository.findAll();
+		int totalServices = services.size();
 
 		List<Complaint> recentComplaints = coRepo.findTop5ByOrderByDateDesc();
 		// int allRecentComplaints = recentComplaints.size();
@@ -56,8 +71,8 @@ public class DashboardController {
 		m.addAttribute("recentComplaints",recentComplaints);
 		m.addAttribute("totalAgents", totalAgents);
 
-		m.addAttribute("totalOrders", totalAgents);
-		m.addAttribute("totalAgents", totalAgents);
+		m.addAttribute("totalOrders", totalOrders);
+		m.addAttribute("totalServices", totalServices);
 		
 
 		return "dashboard";
