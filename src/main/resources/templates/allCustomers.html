@@ -36,6 +36,7 @@
                     <div class="dropdown-content">
                         <a th:href="@{/deleteCustomer(cid=${customer.cid})}" class="delete-button">Delete</a>
                         <a th:href="@{/updateCustomer(cid=${customer.cid})}" class="update-button">Update</a>
+                        <a th:href="@{addOrder(customer_id=${customer.cid}, customer_name=${customer.name})}" class="delete-button">Add Order</a>
                     </div>
             </div>
         </td>

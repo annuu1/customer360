@@ -7,25 +7,18 @@
 <body>
     <div th:replace="~{fragments/sidebar}"></div>
     <div class="content">
-        <a href='addOrder'><h1 class="fheader">Add Customer</h1></a>
+        <a href='addOrder'><h1 class="fheader">Add Order</h1></a>
         <div class="container">
             <form action="/saveOrder" method="get">
                 <div class="form-group">
+                    <input type="hidden" id="id" name="id" th:value="${param.id != null ? param.id : '0'}">
                     <label for="customer_name">Name:</label>
-                    <input type="text" id="customer_name" name="customer_name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="customer_name" name="customer_name" required th:value="${param.customer_name != null ? param.customer_name : ''}">
                 </div>
                 <!-- Order details -->
                 <div class="form-group">
                     <label for="pan">PAN:</label>
-                    <input type="text" id="pan" name="pan" required>
+                    <input type="text" id="pan" name="pan" required th:value="${param.pan != null ? param.pan : ''}">
                 </div>
                 <div class="form-group">
                     <label for="status">Status:</label>
@@ -37,28 +30,33 @@
                 </div>
                 <div class="form-group">
                     <label for="customer_id">Customer ID:</label>
-                    <input type="text" id="customer_id" name="customer_id" required>
+                    <input type="text" id="customer_id" name="customer_id" required th:value="${param.customer_id != null ? param.customer_id : ''}">
                 </div>
                 <div class="form-group">
-                    <label for="service_id">Service ID:</label>
-                    <input type="text" id="service_id" name="service_id" required>
+                    <label for="service">Service:</label>
+                    <select id="service_id" name="service_id">
+                        <option value="itr">ITR</option>
+                        <option value="gst_reg">GST_Registration</option>
+                        <option value="gst_ret">GST_Return</option>
+                        <option value="msme_brn">MSME/BRN</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="order_date">Order Date:</label>
-                    <input type="date" id="order_date" name="order_date" value="<%= java.time.LocalDate.now() %>" required>
+                    <input type="date" id="order_date" name="order_date"  th:value="${param.order_date != null ? param.order_date : ''}" required>
                 </div>
                 <div class="form-group">
                     <label for="assessment_year">Assessment Year:</label>
-                    <select id="assessment_year" name="assessment_year">
+                    <select id="assessment_year" name="assessment_year" th:value="${param.assessment_year != null} ? ${param.assessment_year} : '24-25'">
                         <option value="23-24">23-24</option>
                         <option value="24-25">24-25</option>
                         <option value="25-26">25-26</option>
                         <option value="26-27">26-27</option>
-                    </select>
+                    </select>                    
                 </div>
                 <div class="form-group">
                     <label for="additional_note">Additional Note:</label>
-                    <input type="text" id="additional_note" name="additional_note">
+                    <input type="text" id="additional_note" name="additional_note"  th:value="${param.additional_note != null ? param.additional_note : ''}">
                 </div>
                 <button type="submit">Submit</button>
             </form>

@@ -21,6 +21,7 @@ public class OrdersController {
 
     @RequestMapping("/saveOrder")
     public String saveOrder(
+            @RequestParam Long id,
             @RequestParam String customer_name,
             @RequestParam String pan,
             @RequestParam String status,
@@ -30,7 +31,7 @@ public class OrdersController {
             @RequestParam String assessment_year,
             @RequestParam String additional_note,
             RedirectAttributes redirectAttributes) {
-        Order order = new Order(customer_name, pan, status, customer_id
+        Order order = new Order(id, customer_name, pan, status, customer_id
                             , service_id, order_date, assessment_year, additional_note);
 
         order_repo.save(order);
