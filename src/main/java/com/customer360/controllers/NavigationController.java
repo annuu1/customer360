@@ -35,11 +35,6 @@ public String team(){
 
 
 
-//Agents mapping from here
-    @RequestMapping("login")
-    public String showAgentLogin(){
-        return "login";
-    }
         @RequestMapping("addAgentsForm")
     public String addAgentsForm(){
         return "/admin/addAgent";

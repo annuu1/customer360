@@ -21,7 +21,14 @@ public class PublicController {
 	@Autowired
 	private CustomerRepository crepo;
 
-    @RequestMapping("aboutUs")
+    
+//Agents mapping from here
+@RequestMapping("login1")
+public String showAgentLogin(){
+	return "login1";
+}
+
+	@RequestMapping("aboutUs")
     public String aboutUs(){
         return "aboutUs";
     }
